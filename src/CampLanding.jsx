@@ -202,7 +202,7 @@ export default function CampLanding() {
               </ul>
               <div className="mt-4 md:mt-5 aspect-[16/9] w-full rounded-xl overflow-hidden border border-gray-200">
               <img
-  src={`${import.meta.env.BASE_URL}map.png`}
+  src={`${import.meta.env.BASE_URL}map.jpg`}
   alt="交通位置圖"
   loading="lazy"
   className="w-full aspect-[16/9] object-cover rounded-xl"
@@ -217,7 +217,7 @@ export default function CampLanding() {
                 <p>線上報名：掃描 QR Code</p>
                 <div className="mt-3 aspect-square w-36 md:w-40 rounded-xl overflow-hidden border border-gray-200">
                 <img
-  src={`${import.meta.env.BASE_URL}qr.png`}
+  src={`${import.meta.env.BASE_URL}qr.jpg`}
   alt="線上報名 QR"
   loading="lazy"
   className="w-36 md:w-40 aspect-square object-cover rounded-xl"
