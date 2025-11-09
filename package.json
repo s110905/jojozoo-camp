@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && git subtree split --prefix dist -b gh-pages-tmp && git push -f origin gh-pages-tmp:gh-pages && git branch -D gh-pages-tmp",
-    "push": "git add -A && git commit -m \"update\" && npm run deploy"
+"push": "git add -A && git commit -m \"update $(date +'%Y-%m-%d %H:%M:%S')\" && npm run deploy"
 
   },
   "dependencies": {
