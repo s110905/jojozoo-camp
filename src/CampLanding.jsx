@@ -38,7 +38,13 @@ export default function CampLanding() {
       <header className="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11c0-3.866 3.582-7 8-7s8 3.134 8 7v8a2 2 0 0 1-2 2h-3l-3-3-3 3H5a2 2 0 0 1-2-2v-8z"/></svg>
+          <img
+  src={`${import.meta.env.BASE_URL}logo.svg`}
+  alt="九九峰動物樂園 JOJOZOO"
+  className="h-8 w-8 object-contain"
+/>
+
+
             <div className="leading-tight">
               <div className="font-bold text-lg">九九峰動物樂園</div>
               <div className="text-[11px] text-gray-500">飼育員體驗營・冬令營</div>
@@ -127,7 +133,7 @@ export default function CampLanding() {
 {/*亮點*/}
 <section id="features" className="bg-emerald-50 scroll-mt-24">
   <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-    <h2 className="text-2xl md:text-3xl font-extrabold">營隊亮點</h2>
+    <h2 className="text-2xl md:text-3xl font-extrabold text-center">營隊亮點</h2>
     <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
         <h3 className="font-bold text-lg">與動物近距離互動</h3>
@@ -150,8 +156,7 @@ export default function CampLanding() {
       {/* 日期梯次 */}
       <section id="dates" className="bg-white scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-8 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-extrabold">日期與梯次</h2>
-          <p className="mt-2 text-sm text-gray-600">（115 年；單日營隊）</p>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-center">日期與梯次</h2>
 
           {/* 手機：手風琴 */}
           <div className="mt-4 md:hidden space-y-3">
@@ -163,7 +168,7 @@ export default function CampLanding() {
                 >
                   <div>
                     <div className="font-bold text-emerald-700">{c.group}</div>
-                    <div className="text-xs text-gray-600">點擊展開</div>
+                    {/*<div className="text-xs text-gray-600">點擊展開</div>*/}
                   </div>
                   <span className="text-sm">{openIdx === i ? "－" : "＋"}</span>
                 </button>
@@ -213,7 +218,7 @@ export default function CampLanding() {
 
       <section id="pricing" className="bg-emerald-50 scroll-mt-24">
   <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-    <h2 className="text-2xl md:text-3xl font-extrabold">費用與優惠</h2>
+    <h2 className="text-2xl md:text-3xl font-extrabold text-center">費用與優惠</h2>
     <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
         <h3 className="font-bold text-lg">單人費用</h3>
@@ -248,7 +253,7 @@ export default function CampLanding() {
   {/*一日流程*/}
   <section id="schedule" className="bg-white scroll-mt-24">
   <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-    <h2 className="text-2xl md:text-3xl font-extrabold">一日流程</h2>
+    <h2 className="text-2xl md:text-3xl font-extrabold text-center">一日流程</h2>
     <div className="mt-6 overflow-x-auto rounded-2xl border border-gray-200">
       <table className="min-w-[800px] w-full text-sm">
         <thead className="bg-gray-50 text-left">
@@ -278,7 +283,7 @@ export default function CampLanding() {
       {/* 相簿 */}
       <section id="album" className="bg-emerald-50 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-8 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-extrabold">活動相簿</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-center">活動相簿</h2>
           <div className="mt-4 md:mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {album.map((p, i) => (
               <img
@@ -294,9 +299,9 @@ export default function CampLanding() {
       </section>
 
       {/* 注意事項 & 交通 */}
-      <section id="notice" className="bg-white scroll-mt-24">
+      <section id="notice" className="bg-white scroll-mt-24 ">
         <div className="mx-auto max-w-6xl px-4 py-8 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-extrabold">注意事項 & 交通</h2>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-center">注意事項 & 交通</h3>
           <div className="mt-4 md:mt-6 grid md:grid-cols-2 gap-6 md:gap-8">
             <div>
               <ul className="space-y-2 text-sm leading-relaxed text-gray-800 list-disc list-inside">
@@ -314,30 +319,50 @@ export default function CampLanding() {
                     />
               </div>
             </div>
-            <div className="rounded-2xl border border-gray-200 p-5 md:p-6">
-              <h3 className="font-bold text-lg">報名方式</h3>
-              <div className="mt-3 space-y-2 text-sm">
-                <p>電話：<a href="tel:049-2565107" className="font-semibold hover:underline">049-2565107</a>、<a href="tel:0911-177638" className="font-semibold hover:underline">0911-177638</a></p>
-                <p>Email：<a href="mailto:99cutezoobusiness@gmail.com" className="font-semibold hover:underline">99cutezoobusiness@gmail.com</a></p>
-                <p>線上報名：掃描 QR Code</p>
-                <div className="mt-3 aspect-square w-36 md:w-40 rounded-xl overflow-hidden border border-gray-200">
-                <img
-                    src={`${import.meta.env.BASE_URL}qr.jpg`}
-                    alt="線上報名 QR"
-                    loading="lazy"
-                    className="w-36 md:w-40 aspect-square object-cover rounded-xl"
-                    />
-                </div>
-              </div>
-              <a
-                    href={FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex rounded-xl bg-emerald-600 px-5 py-3 text-white font-bold hover:bg-emerald-700 shadow-md"
-                    >
-                    立刻預約名額
-                    </a>
-            </div>
+            <div className="rounded-2xl border border-gray-200 p-5 md:p-6 flex flex-col items-center ">
+  <h3 className="text-2xl md:text-3xl font-extrabold text-center">報名方式</h3>
+  <div className="space-y-2 text-sm">
+    <p>
+      電話：
+      <a href="tel:049-2565107" className="font-semibold hover:underline">
+        049-2565107
+      </a>
+      、
+      <a href="tel:0911-177638" className="font-semibold hover:underline">
+        0911-177638
+      </a>
+    </p>
+    <p>
+      Email：
+      <a
+        href="mailto:99cutezoobusiness@gmail.com"
+        className="font-semibold hover:underline"
+      >
+        99cutezoobusiness@gmail.com
+      </a>
+    </p>
+    <p>線上報名：掃描 QR Code</p>
+  </div>
+
+  <div className="mt-4 aspect-square w-36 md:w-40 rounded-xl overflow-hidden border border-gray-200">
+    <img
+      src={`${import.meta.env.BASE_URL}qr.jpg`}
+      alt="線上報名 QR"
+      loading="lazy"
+      className="w-full h-full object-cover rounded-xl"
+    />
+  </div>
+
+  <a
+    href={FORM_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-6 inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-white font-bold hover:bg-emerald-700 shadow-md"
+  >
+    立刻預約名額
+  </a>
+</div>
+
           </div>
         </div>
       </section>
