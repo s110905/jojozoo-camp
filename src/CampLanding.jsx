@@ -12,6 +12,7 @@ export default function CampLanding() {
     { group: "成人組", dates: "2/3（單一梯次）",          target: "高中以上",           img: "images/cohorts/adult.jpg" },
   ];
   
+  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdLe5KmRVQgKV--xiUOP-3CIfjkLZVVDwWRBp8b2sNsrNy5Iw/viewform?usp=dialog";
 
   const album = [
     "album/01.jpg","album/02.jpg","album/03.jpg","album/04.jpg",
@@ -32,7 +33,7 @@ export default function CampLanding() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main className="min-h-screen bg-white text-gray-900 pb-15 md:pb-0">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -66,7 +67,16 @@ export default function CampLanding() {
                 .map(([href,label]) => (
                   <a key={href} href={href} className="rounded-lg px-3 py-2 bg-gray-50 active:bg-gray-100" onClick={() => setMenuOpen(false)}>{label}</a>
                 ))}
-              <a href="#signup" className="col-span-2 rounded-lg px-3 py-2 bg-emerald-600 text-white text-center font-semibold" onClick={() => setMenuOpen(false)}>立即報名</a>
+              <a
+                href={FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="col-span-2 rounded-lg px-3 py-2 bg-emerald-600 text-white text-center font-semibold"
+                onClick={() => setMenuOpen(false)}
+                >
+                立即報名
+                </a>
+
             </div>
           </div>
         )}
@@ -89,7 +99,14 @@ export default function CampLanding() {
               <li className="flex items-center gap-2"><span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-600" />地點：南投縣草屯鎮富頂路一段726巷99號</li>
             </ul>
             <div className="mt-5 md:mt-7 flex flex-wrap gap-3">
-              <a href="#signup" className="rounded-xl bg-emerald-600 px-5 py-3 text-white font-bold hover:bg-emerald-700 shadow-md">我要報名</a>
+            <a
+                href={FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-emerald-600 px-5 py-3 text-white font-bold hover:bg-emerald-700 shadow-md"
+                >
+                我要報名
+                </a>
               <a href="#dates" className="rounded-xl border border-gray-300 px-5 py-3 font-semibold hover:border-gray-400">查看梯次</a>
             </div>
           </div>
@@ -97,18 +114,41 @@ export default function CampLanding() {
           <div className="order-1 md:order-2">
             <div className="aspect-[4/3] w-full rounded-2xl border border-dashed border-emerald-300 bg-emerald-50/40 overflow-hidden">
             <img
-  src={`${import.meta.env.BASE_URL}hero.jpg`}
-  alt="主視覺"
-  loading="lazy"
-  className="w-full h-full object-cover"
-/>
+                src={`${import.meta.env.BASE_URL}hero.jpg`}
+                alt="主視覺"
+                loading="lazy"
+                className="w-full h-full object-cover"
+                />
             </div>
           </div>
         </div>
       </section>
 
+{/*亮點*/}
+<section id="features" className="bg-emerald-50 scroll-mt-24">
+  <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+    <h2 className="text-2xl md:text-3xl font-extrabold">營隊亮點</h2>
+    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+        <h3 className="font-bold text-lg">與動物近距離互動</h3>
+        <p className="mt-2 text-gray-700 text-sm leading-relaxed">參與餵食、照護與行為觀察，了解動物的日常需求與習性。</p>
+      </article>
+      <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+        <h3 className="font-bold text-lg">專業飼育體驗</h3>
+        <p className="mt-2 text-gray-700 text-sm leading-relaxed">清潔、備料與前後場作業，學習正確的照護流程與安全知識。</p>
+      </article>
+      <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+        <h3 className="font-bold text-lg">手作動物玩具</h3>
+        <p className="mt-2 text-gray-700 text-sm leading-relaxed">親手製作鸚鵡玩具等豐富化素材，認識環境豐富化理念。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
       {/* 日期梯次 */}
-      <section id="dates" className="bg-white">
+      <section id="dates" className="bg-white scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-8 md:py-16">
           <h2 className="text-2xl md:text-3xl font-extrabold">日期與梯次</h2>
           <p className="mt-2 text-sm text-gray-600">（115 年；單日營隊）</p>
@@ -131,11 +171,11 @@ export default function CampLanding() {
                   <div className="px-4 pb-4 text-sm text-gray-800">
                     <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-200 mb-3">
                     <img
-  src={`${import.meta.env.BASE_URL}${c.img}`}
-  alt={c.group}
-  loading="lazy"
-  className="w-full h-full object-cover rounded-xl"
-/>
+                        src={`${import.meta.env.BASE_URL}${c.img}`}
+                        alt={c.group}
+                        loading="lazy"
+                        className="w-full h-full object-cover rounded-xl"
+                        />
 
                     </div>
                     <p className="font-medium">{c.dates}</p>
@@ -152,12 +192,10 @@ export default function CampLanding() {
               <article key={i} className="rounded-2xl border border-gray-200 p-6 hover:shadow-sm transition">
                 <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-200">
                 <img
-  src={`${import.meta.env.BASE_URL}${c.img}`}
-  alt={c.group}
-  loading="lazy"
-  className="w-full h-full object-cover"
-/>
-
+                    src={`${import.meta.env.BASE_URL}${c.img}`}
+                    alt={c.group}
+                    loading="lazy"
+                    className="w-full h-full object-cover"/>
                 </div>
                 <h3 className="mt-4 font-bold text-lg text-emerald-700">{c.group}</h3>
                 <p className="mt-1 text-sm text-gray-800">{c.dates}</p>
@@ -170,8 +208,75 @@ export default function CampLanding() {
         </div>
       </section>
 
+
+ {/*優惠費用*/}
+
+      <section id="pricing" className="bg-emerald-50 scroll-mt-24">
+  <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+    <h2 className="text-2xl md:text-3xl font-extrabold">費用與優惠</h2>
+    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+        <h3 className="font-bold text-lg">單人費用</h3>
+        <p className="mt-2 text-3xl font-extrabold text-emerald-700">
+          NT$ 2,500 <span className="text-base font-medium text-gray-500">/ 人</span>
+        </p>
+        <ul className="mt-4 space-y-2 text-sm text-gray-700 list-disc list-inside">
+          <li>含門票、餐點、保險、教材、紀念品、粉紅泡泡秀門票</li>
+          <li>個人報名：12/31 前享早鳥優惠</li>
+          <li>攜伴報名：另有優惠</li>
+        </ul>
+      </article>
+      <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+        <h3 className="font-bold text-lg">團體 / 包班</h3>
+        <p className="mt-2 text-gray-700 text-sm">20 人以上或包班需求，請來電聯繫業務部。</p>
+        <p className="mt-3 text-lg font-bold">0911-177638</p>
+        <p className="text-sm text-gray-500">（專人服務，彈性規劃）</p>
+      </article>
+      <article className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+        <h3 className="font-bold text-lg">家屬入園優惠</h3>
+        <ul className="mt-2 space-y-2 text-sm text-gray-700 list-disc list-inside">
+          <li>陪同家長入園門票：團體價 360 元（草屯籍 280 元）</li>
+          <li>每位學員可再優惠 2 位家人（親子組亦同）</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+  {/*一日流程*/}
+  <section id="schedule" className="bg-white scroll-mt-24">
+  <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+    <h2 className="text-2xl md:text-3xl font-extrabold">一日流程</h2>
+    <div className="mt-6 overflow-x-auto rounded-2xl border border-gray-200">
+      <table className="min-w-[800px] w-full text-sm">
+        <thead className="bg-gray-50 text-left">
+          <tr>
+            {['時間','活動名稱','活動內容','地點'].map(h=>(
+              <th key={h} className="px-4 py-3 font-semibold text-gray-700 border-b">{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {scheduleRows.map((row,i)=>(
+            <tr key={i} className={i%2 ? 'bg-gray-50/60' : ''}>
+              {row.map((cell,j)=>(
+                <td key={j} className="px-4 py-3 border-b text-gray-800">{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p className="mt-3 text-xs text-gray-500">實際時段可能依現場狀況微調，以安全為優先。</p>
+  </div>
+</section>
+
+
+
       {/* 相簿 */}
-      <section id="album" className="bg-emerald-50">
+      <section id="album" className="bg-emerald-50 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-8 md:py-16">
           <h2 className="text-2xl md:text-3xl font-extrabold">活動相簿</h2>
           <div className="mt-4 md:mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -189,7 +294,7 @@ export default function CampLanding() {
       </section>
 
       {/* 注意事項 & 交通 */}
-      <section id="notice" className="bg-white">
+      <section id="notice" className="bg-white scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-8 md:py-16">
           <h2 className="text-2xl md:text-3xl font-extrabold">注意事項 & 交通</h2>
           <div className="mt-4 md:mt-6 grid md:grid-cols-2 gap-6 md:gap-8">
@@ -202,11 +307,11 @@ export default function CampLanding() {
               </ul>
               <div className="mt-4 md:mt-5 aspect-[16/9] w-full rounded-xl overflow-hidden border border-gray-200">
               <img
-  src={`${import.meta.env.BASE_URL}map.jpg`}
-  alt="交通位置圖"
-  loading="lazy"
-  className="w-full aspect-[16/9] object-cover rounded-xl"
-/>
+                    src={`${import.meta.env.BASE_URL}map.jpg`}
+                    alt="交通位置圖"
+                    loading="lazy"
+                    className="w-full aspect-[16/9] object-cover rounded-xl"
+                    />
               </div>
             </div>
             <div className="rounded-2xl border border-gray-200 p-5 md:p-6">
@@ -217,18 +322,27 @@ export default function CampLanding() {
                 <p>線上報名：掃描 QR Code</p>
                 <div className="mt-3 aspect-square w-36 md:w-40 rounded-xl overflow-hidden border border-gray-200">
                 <img
-  src={`${import.meta.env.BASE_URL}qr.jpg`}
-  alt="線上報名 QR"
-  loading="lazy"
-  className="w-36 md:w-40 aspect-square object-cover rounded-xl"
-/>
+                    src={`${import.meta.env.BASE_URL}qr.jpg`}
+                    alt="線上報名 QR"
+                    loading="lazy"
+                    className="w-36 md:w-40 aspect-square object-cover rounded-xl"
+                    />
                 </div>
               </div>
-              <a href="#signup" className="mt-5 inline-flex rounded-xl bg-emerald-600 px-5 py-3 text-white font-bold hover:bg-emerald-700 shadow-md">立刻預約名額</a>
+              <a
+                    href={FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex rounded-xl bg-emerald-600 px-5 py-3 text-white font-bold hover:bg-emerald-700 shadow-md"
+                    >
+                    立刻預約名額
+                    </a>
             </div>
           </div>
         </div>
       </section>
+     
+
 
       {/* Final CTA */}
       <section id="signup" className="bg-gradient-to-b from-emerald-50 to-white">
@@ -245,14 +359,21 @@ export default function CampLanding() {
       {/* Footer + 手機浮動 CTA */}
       <footer className="border-t border-gray-100">
         <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p>© 九九峰動物樂園 JOJOZOO Animal Park</p>
+          <p>© 九九峰動物樂園 JOJOZOO Park</p>
           <p>內容含日期、時間、地點、組別、費用、課表、注意事項、報名方式等資訊。</p>
         </div>
       </footer>
 
-      <a href="#signup" className="fixed md:hidden bottom-3 left-3 right-3 rounded-full bg-emerald-600 text-white px-5 py-3 text-center font-bold shadow-lg">
-        立即報名
-      </a>
+                <a
+            href={FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed md:hidden bottom-3 left-3 right-3 z-50 rounded-full bg-emerald-600 text-white px-5 py-3 text-center font-bold shadow-lg"
+            >
+            立即報名
+            </a>
+
+
     </main>
   );
 }
