@@ -7,10 +7,11 @@ export default function CampLanding() {
   // 圖片路徑一律走 BASE_URL，支援 dev 與 GitHub Pages
   const cohorts = [
     { group: "親子組", dates: "1/26、1/27、1/28（三梯次）", target: "3–10 歲＋1–2 位成人", img: "images/cohorts/parent.jpg" },
-    { group: "國小組", dates: "1/29、1/30（兩梯次）", target: "國小 4–6 年級",         img: "images/cohorts/elementary.jpg" },
-    { group: "國中組", dates: "2/2（單一梯次）",         target: "國中生",              img: "images/cohorts/junior.jpg" },
-    { group: "成人組", dates: "2/3（單一梯次）",         target: "高中以上",            img: "images/cohorts/adult.jpg" },
+    { group: "國小組", dates: "1/29、1/30（兩梯次）", target: "國小4–6年級",         img: "images/cohorts/elementary.jpg" },
+    { group: "國中組", dates: "2/2（單一梯次）",          target: "國中生",             img: "images/cohorts/junior.jpg" },
+    { group: "成人組", dates: "2/3（單一梯次）",          target: "高中以上",           img: "images/cohorts/adult.jpg" },
   ];
+  
 
   const album = [
     "album/01.jpg","album/02.jpg","album/03.jpg","album/04.jpg",
@@ -95,12 +96,12 @@ export default function CampLanding() {
 
           <div className="order-1 md:order-2">
             <div className="aspect-[4/3] w-full rounded-2xl border border-dashed border-emerald-300 bg-emerald-50/40 overflow-hidden">
-              <img
-                src={`${import.meta.env.BASE_URL}hero.jpg`}
-                alt="主視覺"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+            <img
+  src={`${import.meta.env.BASE_URL}hero.jpg`}
+  alt="主視覺"
+  loading="lazy"
+  className="w-full h-full object-cover"
+/>
             </div>
           </div>
         </div>
@@ -129,12 +130,13 @@ export default function CampLanding() {
                 {openIdx === i && (
                   <div className="px-4 pb-4 text-sm text-gray-800">
                     <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-200 mb-3">
-                      <img
-                        src={`${import.meta.env.BASE_URL}${c.img}`}
-                        alt={c.group}
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
+                    <img
+  src={`${import.meta.env.BASE_URL}${c.img}`}
+  alt={c.group}
+  loading="lazy"
+  className="w-full h-full object-cover rounded-xl"
+/>
+
                     </div>
                     <p className="font-medium">{c.dates}</p>
                     <p className="text-gray-600">招生對象：{c.target}</p>
@@ -149,12 +151,13 @@ export default function CampLanding() {
             {cohorts.map((c, i) => (
               <article key={i} className="rounded-2xl border border-gray-200 p-6 hover:shadow-sm transition">
                 <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-200">
-                  <img
-                    src={`${import.meta.env.BASE_URL}${c.img}`}
-                    alt={c.group}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
+                <img
+  src={`${import.meta.env.BASE_URL}${c.img}`}
+  alt={c.group}
+  loading="lazy"
+  className="w-full h-full object-cover"
+/>
+
                 </div>
                 <h3 className="mt-4 font-bold text-lg text-emerald-700">{c.group}</h3>
                 <p className="mt-1 text-sm text-gray-800">{c.dates}</p>
@@ -198,12 +201,12 @@ export default function CampLanding() {
                 <li>園區地址：<b>南投縣草屯鎮富頂路一段726巷99號</b></li>
               </ul>
               <div className="mt-4 md:mt-5 aspect-[16/9] w-full rounded-xl overflow-hidden border border-gray-200">
-                <img
-                  src={`${import.meta.env.BASE_URL}map.png`}
-                  alt="交通位置圖"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+              <img
+  src={`${import.meta.env.BASE_URL}map.png`}
+  alt="交通位置圖"
+  loading="lazy"
+  className="w-full aspect-[16/9] object-cover rounded-xl"
+/>
               </div>
             </div>
             <div className="rounded-2xl border border-gray-200 p-5 md:p-6">
@@ -213,12 +216,12 @@ export default function CampLanding() {
                 <p>Email：<a href="mailto:99cutezoobusiness@gmail.com" className="font-semibold hover:underline">99cutezoobusiness@gmail.com</a></p>
                 <p>線上報名：掃描 QR Code</p>
                 <div className="mt-3 aspect-square w-36 md:w-40 rounded-xl overflow-hidden border border-gray-200">
-                  <img
-                    src={`${import.meta.env.BASE_URL}qr.png`}
-                    alt="線上報名 QR"
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
+                <img
+  src={`${import.meta.env.BASE_URL}qr.png`}
+  alt="線上報名 QR"
+  loading="lazy"
+  className="w-36 md:w-40 aspect-square object-cover rounded-xl"
+/>
                 </div>
               </div>
               <a href="#signup" className="mt-5 inline-flex rounded-xl bg-emerald-600 px-5 py-3 text-white font-bold hover:bg-emerald-700 shadow-md">立刻預約名額</a>
