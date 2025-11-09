@@ -119,7 +119,12 @@ export default function CampLanding() {
             <div className="aspect-[4/3] w-full rounded-2xl border border-dashed border-emerald-300 bg-emerald-50/40 flex items-center justify-center overflow-hidden">
               {/* 替換成你的圖：放檔在 /public，然後用下行： */}
               {/* <img src="/hero.jpg" alt="主視覺" loading="lazy" className="w-full h-full object-cover" /> */}
-              <img src="/img1.jpg" alt="主視覺" loading="lazy" className="w-full h-full object-cover" />
+              <img
+  src={import.meta.env.BASE_URL + 'img1.jpg'}
+  alt="主視覺"
+  loading="lazy"
+  className="w-full h-full object-cover"
+/>
             </div>
           </div>
         </div>
