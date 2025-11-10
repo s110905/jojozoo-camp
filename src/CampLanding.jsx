@@ -38,13 +38,7 @@ export default function CampLanding() {
       <header className="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-          <img
-  src={`${import.meta.env.BASE_URL}logo.svg`}
-  alt="九九峰動物樂園 JOJOZOO"
-  className="h-8 w-8 object-contain"
-/>
-
-
+            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11c0-3.866 3.582-7 8-7s8 3.134 8 7v8a2 2 0 0 1-2 2h-3l-3-3-3 3H5a2 2 0 0 1-2-2v-8z"/></svg>
             <div className="leading-tight">
               <div className="font-bold text-lg">九九峰動物樂園</div>
               <div className="text-[11px] text-gray-500">飼育員體驗營・冬令營</div>
