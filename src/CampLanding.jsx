@@ -92,7 +92,8 @@ export default function CampLanding() {
         <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-6 md:gap-8 py-8 md:py-16 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-[28px] md:text-5xl font-extrabold leading-tight">
-              變身動物飼育員，<span className="text-emerald-700">體驗不一樣的一天！</span>
+              變身動物飼育員，<br/>
+              <span className="text-emerald-700">體驗不一樣的一天！</span><br />
             </h1>
             <p className="mt-3 md:mt-4 text-[15px] md:text-lg text-gray-700">
               親手參與動物照護、行為觀察與餵食活動，與動物近距離互動，留下專屬你的冬日回憶！
